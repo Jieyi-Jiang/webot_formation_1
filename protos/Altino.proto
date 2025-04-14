@@ -1,0 +1,149 @@
+# VRML_SIM R2023b utf8
+# based on: https://github.com/cyberbotics/webots/blob/released/projects/robots/saeon/protos/Altino.proto
+# modifid by Jieyi Jiang on 2024/12/1 
+# The "ALTINO System" is a robot platform designed for education. It is a four-wheeled robot based on an Ackermann vehicle frame.
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/robots/saeon/protos/Altino.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/vehicles/protos/abstract/Car.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/robots/saeon/protos/AltinoBodyMesh.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/robots/saeon/protos/AltinoWheel.proto"
+
+PROTO Altino [
+  field SFVec3f    translation     0 0 0.022               # Is `Pose.translation`.
+  field SFRotation rotation        0 0 1 0                 # Is `Pose.rotation`.
+  field SFString   name            "vehicle"               # Is `Solid.name`.
+  field SFString   controller      "car_controller"       # Is `Robot.controller`.
+  field MFString   controllerArgs  ["232.10.11.12" "3333" "3333" "1"]                      # Is `Robot.controllerArgs`.
+  field SFString   window          "<generic>"             # Is `Robot.window`.
+  field SFBool     synchronization TRUE                    # Is `Robot.synchronization`.
+  field SFColor    color           0.098 0.58 0.49         # Is `Material.diffuseColor`.
+]
+{
+  Car {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    model "Altino"
+    controller IS controller
+    controllerArgs IS controllerArgs
+    window IS window
+    synchronization IS synchronization
+    trackFront                     0.08
+    trackRear                      0.08
+    wheelbase                      0.1
+    minSteeringAngle               -1.22
+    maxSteeringAngle               1.22
+    suspensionFrontSpringConstant  100000
+    suspensionFrontDampingConstant 4000
+    suspensionRearSpringConstant   100000
+    suspensionRearDampingConstant  4000
+    wheelsDampingConstant          5
+    extensionSlot [
+      GPS {
+        name              "GPS"
+        # translation       0.14 0 -0.005
+        type              "satellite"   # {"satellite", "laser"}
+        accuracy          0             # [0, inf)
+        noiseCorrelation  0             # [0, 1]
+        resolution        -1            # {-1, [0, inf)}
+        speedNoise        0             # [0, inf)
+        speedResolution   -1            # {-1, [0, inf)}
+      }
+      Accelerometer {
+        name "accelerometer"
+        xAxis TRUE
+        yAxis TRUE
+        zAxis TRUE
+      }
+      Gyro {
+        name "gyro"
+        lookupTable [ ]    # lookup table
+        xAxis       TRUE   # {TRUE, FALSE}
+        yAxis       TRUE   # {TRUE, FALSE}
+        zAxis       TRUE   # {TRUE, FALSE}
+        resolution  -1     # {-1, [0, inf)}
+      }
+      Compass {
+        name "compass"
+        lookupTable [ ]    # lookup table
+        xAxis       TRUE   # {TRUE, FALSE}
+        yAxis       TRUE   # {TRUE, FALSE}
+        zAxis       TRUE   # {TRUE, FALSE}
+        resolution  -1     # {-1, [0, inf)}
+      }
+      InertialUnit {
+        name "inertial unit"
+        xAxis       TRUE   # {TRUE, FALSE}
+        zAxis       TRUE   # {TRUE, FALSE}
+        yAxis       TRUE   # {TRUE, FALSE}
+        resolution  -1     # {-1, [0, inf)}
+        noise        0      # {0, [0, 1)}
+}
+      Emitter {
+        type "radio"
+      }
+      Receiver {
+        type "radio"
+      }
+      Pose {
+        translation 0.071 0 0.024
+        rotation -0.57735 0.57735 0.57735 -2.09439
+        children [
+          DEF ALTINO_BODY Shape {
+            appearance PBRAppearance {
+              baseColor IS color
+              roughness 0.2
+              metalness 0
+            }
+            geometry AltinoBodyMesh { }
+          }
+        ]
+      }
+    ]
+    boundingObject Group {
+      children [
+        Pose {
+          translation 0.03 0 0.017
+          children [
+            Box {
+              size 0.097 0.063 0.05
+            }
+          ]
+        }
+        Pose {
+          translation 0.052 0 0.015
+          children [
+            Box {
+              size 0.16 0.09 0.04
+            }
+          ]
+        }
+        Pose {
+          translation 0.052 0 0.015
+          children [
+            Box {
+              size 0.18 0.07 0.04
+            }
+          ]
+        }
+      ]
+    }
+    physics                 Physics { density -1 mass 2 }
+    radarCrossSection       100
+    wheelFrontRight         AltinoWheel { name "front right wheel" }
+    wheelFrontLeft          AltinoWheel { name "front left wheel"}
+    wheelRearRight          AltinoWheel { name "rear right wheel"}
+    wheelRearLeft           AltinoWheel { name "rear left wheel"}
+    type                    "4x4"
+    engineType              "electric"
+    engineSound             ""
+    brakeCoefficient        700
+    time0To100              2
+    engineMaxTorque         0.5
+    engineMaxPower          2
+    engineMinRPM            1
+    engineMaxRPM            250
+    gearRatio               [-30 30]
+    maxVelocity             4
+  }
+}

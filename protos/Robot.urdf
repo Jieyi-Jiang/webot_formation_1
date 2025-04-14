@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<robot name="D:/Project/Robot/Sim/webots_test/protos/Robot.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0.03 0 0.017" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.097 0.063 0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.03 0 0.017" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.097 0.063 0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.052 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.16 0.09 0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.052 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.16 0.09 0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.052 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.07 0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.052 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.07 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="backlights">
+  </link>
+  <joint name="base_link_backlights_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="backlights"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="headlights">
+  </link>
+  <joint name="base_link_headlights_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="headlights"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="receiver">
+  </link>
+  <joint name="base_link_receiver_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="receiver"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="emitter">
+  </link>
+  <joint name="base_link_emitter_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="emitter"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="accelerometer">
+  </link>
+  <joint name="base_link_accelerometer_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="accelerometer"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="light_sensor">
+  </link>
+  <joint name="base_link_light_sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="light_sensor"/>
+    <origin xyz="0.055 -0.01 0.042" rpy="3.141593 -1.570793 3.141593"/>
+  </joint>
+  <link name="back_sensor">
+  </link>
+  <joint name="base_link_back_sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_sensor"/>
+    <origin xyz="-0.038 0 -0.005" rpy="0 0 3.141593"/>
+  </joint>
+  <link name="side_right_sensor">
+  </link>
+  <joint name="base_link_side_right_sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="side_right_sensor"/>
+    <origin xyz="0.05 -0.04 -0.005" rpy="0 0 -1.5708"/>
+  </joint>
+  <link name="side_left_sensor">
+  </link>
+  <joint name="base_link_side_left_sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="side_left_sensor"/>
+    <origin xyz="0.05 0.04 -0.005" rpy="0 0 1.5708"/>
+  </joint>
+  <link name="front_right_sensor">
+  </link>
+  <joint name="base_link_front_right_sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_right_sensor"/>
+    <origin xyz="0.138 -0.026 -0.005" rpy="0 0 -0.2"/>
+  </joint>
+  <link name="front_center_sensor">
+  </link>
+  <joint name="base_link_front_center_sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_center_sensor"/>
+    <origin xyz="0.14 0 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="front_left_sensor">
+  </link>
+  <joint name="base_link_front_left_sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_left_sensor"/>
+    <origin xyz="0.138 0.026 -0.005" rpy="0 0 0.2"/>
+  </joint>
+  <link name="engine_speaker">
+  </link>
+  <joint name="base_link_engine_speaker_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="engine_speaker"/>
+    <origin xyz="0.1 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="right_rear_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear right wheel"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1e+08" velocity="29.8"/>
+    <origin xyz="0 -0.04 0" rpy="0 0 0"/>
+  </joint>
+  <link name="rear right wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="slot_rear right wheel_joint" type="fixed">
+    <parent link="slot"/>
+    <child link="rear right wheel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="left_rear_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear left wheel"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1e+08" velocity="29.8"/>
+    <origin xyz="0 0.04 0" rpy="0 0 3.14159"/>
+  </joint>
+  <link name="rear left wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="slot_0_rear left wheel_joint" type="fixed">
+    <parent link="slot_0"/>
+    <child link="rear left wheel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>

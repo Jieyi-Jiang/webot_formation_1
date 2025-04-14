@@ -1,0 +1,52 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+IMPORTABLE EXTERNPROTO "../protos/Altino.proto"
+IMPORTABLE EXTERNPROTO "../protos/Obstacle.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.0002284770638978906 0.9999998560090083 -0.00048557202748084803 0.867049263570157
+  position -3.2913626072493205 0.0037153331163499725 5.9114458308529985
+  follow "vehicle"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 50 50
+}
+TexturedBackgroundLight {
+}
+Altino {
+  hidden position_0_0 4.591089095616166e-15
+  hidden position2_0_0 5.4638675276060005e-08
+  hidden position_0_1 3.601290592808181e-15
+  hidden position2_0_1 5.4368226711041404e-08
+  hidden position_0_2 -3.739122673262108e-08
+  hidden position_0_3 3.7231848009746514e-08
+  hidden linearVelocity_0 5.590219487316972e-11 1.2904780767152967e-11 -1.4722445484949276e-14
+  hidden angularVelocity_0 -2.9028375698586864e-13 1.2157428883680276e-12 1.7772771672159172e-10
+  hidden rotation_1 -2.2955445478080752e-15 -0.9999999999999966 -8.402636177432618e-08 5.16191365590357e-08
+  hidden linearVelocity_1 4.8774172950445104e-11 2.228581817943183e-11 -8.105959732046913e-14
+  hidden angularVelocity_1 -1.4304610611895097e-13 3.1637375408400566e-12 1.7772838343303951e-10
+  hidden rotation_2 1.8006452964040867e-15 0.9999999999999979 -6.623888272002078e-08 5.16191365590357e-08
+  hidden linearVelocity_2 6.299260160536403e-11 2.228640015637012e-11 -5.2813127511841995e-14
+  hidden angularVelocity_2 -3.124531245809136e-13 3.731190564054854e-12 1.7772737160043824e-10
+  hidden rotation_3 0 1 0 4.2146848510894035e-08
+  hidden linearVelocity_3 4.877442770398815e-11 4.512312919548639e-12 3.276482179293095e-14
+  hidden angularVelocity_3 -3.140170631221515e-13 1.0743544389782852e-09 1.777289081590737e-10
+  hidden rotation_4 0 1 0 4.2146848510894035e-08
+  hidden linearVelocity_4 6.299288004533471e-11 4.515221830165151e-12 4.256710038089911e-14
+  hidden angularVelocity_4 -4.116507567262742e-13 1.2349644288074474e-09 1.7772903692108893e-10
+  translation 6.254908533426945e-05 1.7870399764387667e-07 0.01982874986847579
+  rotation 0.00045666785663397183 0.9999995798089643 -0.000794881351865269 0.0026027546051165668
+  name "vehicle_1"
+}
+Obstacle {
+  translation 0 0 -0.0245
+}

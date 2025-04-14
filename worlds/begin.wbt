@@ -1,0 +1,82 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+IMPORTABLE EXTERNPROTO "../protos/Altino.proto"
+IMPORTABLE EXTERNPROTO "../protos/Obstacle.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.1913120374625129 0.6786530857245276 0.7091048537124245 0.7567875834976842
+  position -3.9889790915003775 -4.598676032157889 4.027826362289288
+  follow "vehicle"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 50 50
+}
+TexturedBackgroundLight {
+}
+Altino {
+  hidden position_0_0 4.6341529385222545e-15
+  hidden position2_0_0 5.464216657835935e-08
+  hidden position_0_1 3.594957408445851e-15
+  hidden position2_0_1 5.437273699468103e-08
+  hidden position_0_2 -3.719252895937512e-08
+  hidden position_0_3 3.7300076387247986e-08
+  hidden linearVelocity_0 5.590387944232056e-11 1.2903951110144726e-11 -1.2448708730516955e-14
+  hidden angularVelocity_0 -2.814540530599193e-13 1.2618045990713712e-12 1.7772389017865477e-10
+  hidden rotation_1 -2.317076469261119e-15 -0.9999999999999966 -8.480909943196801e-08 5.16191365590357e-08
+  hidden rotation_2 1.7974787042229215e-15 0.9999999999999978 -6.61169109216907e-08 5.16191365590357e-08
+  hidden rotation_3 0 1 0 4.2146848510894035e-08
+  hidden rotation_4 0 0.9999999999999999 0 4.2146848510894035e-08
+  translation 6.254918547825283e-05 1.787120825909336e-07 0.019828749868555838
+  rotation 0.0004566675273862552 0.9999995799063768 -0.0007947589817322327 0.002602754607066742
+  name "vehicle_1"
+}
+Altino {
+  hidden position_0_0 -1.0230421827508964e-16
+  hidden position2_0_0 -2.0714852337364041e-10
+  hidden position_0_1 1.0016480148175309e-16
+  hidden position2_0_1 -2.0716153849732498e-10
+  hidden position_0_2 2.0716768286624994e-10
+  hidden position_0_3 2.0717954137454634e-10
+  hidden linearVelocity_0 5.173153572179956e-16 1.9545267329832673e-15 -5.684341886080802e-16
+  hidden angularVelocity_0 -2.9848328360634665e-14 1.5099730026390027e-14 -9.063498727175748e-15
+  translation -1.0070979638614197e-05 0.5000000000004394 0.01951851148868195
+  rotation -4.358604761037095e-08 -0.9999999999999991 -4.707884297977597e-11 0.0005049078281214881
+  name "vehicle_2"
+  controllerArgs [
+    "232.10.11.12"
+    "3333"
+    "3333"
+    "2"
+  ]
+}
+Altino {
+  hidden position_0_0 -9.726326254105672e-17
+  hidden position2_0_0 -2.071491894033509e-10
+  hidden position_0_1 9.634330405934597e-17
+  hidden position2_0_1 -2.0716305114496655e-10
+  hidden position_0_2 2.0716641677987058e-10
+  hidden position_0_3 2.0717638104322135e-10
+  hidden linearVelocity_0 4.351310978201184e-16 3.5343398254489524e-16 5.684341886080802e-17
+  hidden angularVelocity_0 1.3048035536452034e-15 8.098814997222027e-15 5.572652942266232e-15
+  translation -1.0070979638669708e-05 -0.4999999999995591 0.019518511488681792
+  rotation -4.358795379156395e-08 -0.9999999999999989 -4.132742112994582e-11 0.0005049078281243296
+  name "vehicle_3"
+  controllerArgs [
+    "232.10.11.12"
+    "3333"
+    "3333"
+    "3"
+  ]
+}
+Obstacle {
+  translation 0 0 -0.0245
+}
